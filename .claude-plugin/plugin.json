@@ -1,0 +1,9 @@
+{
+  "name": "firetiger",
+  "version": "1.0.0",
+  "description": "Firetiger observability platform integration for Claude Code",
+  "author": {
+    "name": "Firetiger Inc.",
+    "email": "support@firetiger.com"
+  }
+}

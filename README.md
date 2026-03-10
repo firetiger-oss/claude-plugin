@@ -1,81 +1,42 @@
-# Firetiger Plugin for Claude Code
+<p align="center">
+  <img src="assets/firetiger.svg" alt="Firetiger logo" width="220">
+</p>
 
-Add AI-powered observability to your application and interact with your production systems through natural language.
+# Firetiger Claude Code Plugin
 
-## Quick Start
+The official [Claude Code](https://claude.ai/code) plugin for [Firetiger](https://firetiger.com). Firetiger agents monitor, investigate, catalog issues, and apply runbooks autonomously while Claude Code helps you build and debug code.
 
-1. **Install the plugin**
-   ```bash
-   claude plugin install firetiger
-   ```
+## Repository Layout
 
-2. **Run setup**
-   ```
-   /firetiger:setup
-   ```
+This repository publishes a single plugin:
 
-3. **Deploy your app** - telemetry automatically flows to Firetiger
+- `.claude-plugin/plugin.json`: plugin manifest
+- `commands/`: Firetiger skills exposed to Claude Code
+- `.mcp.json`: Firetiger MCP server configuration
+- `assets/firetiger.svg`: plugin logo
 
-That's it! The setup skill will:
-- Detect your tech stack (Next.js, Python, Go, etc.)
-- Add OpenTelemetry instrumentation
-- Create a monitoring agent tailored to your stack
-- Show you what was configured
+## What's Included
 
-## After Setup
+### MCP Server
 
-Once configured, use natural language to interact with your production systems:
+Connect to Firetiger's API for querying telemetry data, managing investigations, and interacting with AI agents directly from Claude Code.
 
-- **"Query my logs for errors in the last hour"** - runs SQL against your telemetry
-- **"What's causing the latency spike?"** - chat with your monitoring agent
-- **"Create a known issue for this bug"** - track recurring problems
-- **"Show me slow database queries"** - investigate performance issues
-- **"Alert me on Slack when error rate exceeds 1%"** - configure monitoring
+### Skills
 
-## Skills
+| Skill | Description |
+|-------|-------------|
+| `firetiger:setup` | Full onboarding - detects stack, adds instrumentation, connects integrations, creates agent |
+| `firetiger:instrument` | OpenTelemetry instrumentation for Node.js, Python, Go, and Rust applications |
+| `firetiger:create-agent` | Create a monitoring agent with a natural language goal |
+| `firetiger:monitor-deploy` | Set up deployment monitoring for a PR via GitHub integration |
+| `firetiger:query` | Query traces, logs, and metrics with SQL via Firetiger MCP |
+| `firetiger:investigate` | Start an investigation to diagnose issues |
 
-### `/firetiger:setup`
-Full onboarding - detects stack, adds instrumentation, creates agent.
+## Resources
 
-### `/firetiger:instrument`
-Just add OpenTelemetry instrumentation without creating an agent.
-
-## MCP Tools
-
-This plugin connects to Firetiger's MCP server, giving you access to:
-
-| Tool | Description |
-|------|-------------|
-| `query` | Run SQL queries against your logs, traces, and metrics |
-| `send_agent_message` | Chat with a monitoring agent about your system |
-| `read_agent_messages` | Read agent session output |
-| `create_agent_with_goal` | Create an agent with a natural language goal |
-| `get_ingest_credentials` | Get OTLP endpoint for sending telemetry |
-
-Plus full CRUD for agents, connections, known issues, runbooks, and triggers.
-
-## Authentication
-
-On first use, you'll be prompted to authenticate with Firetiger via OAuth. This is a one-time setup that authorizes Claude Code to access your Firetiger account.
-
-## Manual Installation
-
-```bash
-git clone https://github.com/firetiger-inc/firetiger-plugin.git
-claude --plugin-dir ./firetiger-plugin
-```
-
-## Supported Frameworks
-
-The setup skill automatically detects and configures:
-
-- **Node.js**: Next.js, Express, Fastify, Koa, NestJS
-- **Python**: FastAPI, Django, Flask, Starlette
-- **Go**: Standard library, Gin, Echo, Chi, Fiber
-- **Rust**: Actix, Axum, Rocket
-
-## Links
-
-- [Firetiger](https://firetiger.com)
 - [Firetiger Documentation](https://docs.firetiger.com)
-- [GitHub Issues](https://github.com/firetiger-inc/firetiger-plugin/issues)
+- [OpenTelemetry Documentation](https://opentelemetry.io/docs/)
+
+## License
+
+MIT

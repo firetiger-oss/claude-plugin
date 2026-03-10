@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "firetiger": {
+      "url": "https://api.cloud.firetiger.com/mcp/v1"
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "mcpServers": {
     "firetiger": {
       "type": "http",
-      "url": "https://api.staging.cloud.firetiger.com/mcp/v1"
+      "url": "https://api.cloud.firetiger.com/mcp/v1"
     }
   }
 }

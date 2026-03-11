@@ -8,6 +8,5 @@
   "homepage": "https://firetiger.com",
   "repository": "https://github.com/firetiger-oss/claude-plugin",
   "license": "MIT",
-  "keywords": ["claude-code", "plugin", "observability", "firetiger", "mcp"],
-  "logo": "assets/firetiger.svg"
+  "keywords": ["claude-code", "plugin", "observability", "firetiger", "mcp"]
 }

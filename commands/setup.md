@@ -9,7 +9,7 @@ You are setting up Firetiger observability for this project. Your goal is **mini
 
 ## Step 1: Authenticate
 
-First, check if Firetiger MCP tools are available by trying to call `get_subscription_status`.
+First, check if Firetiger MCP tools are available by trying to call `get_ingest_credentials`.
 
 If the tools are NOT available (you get an error about tools not being loaded, or the tool doesn't exist), tell the user:
 
@@ -21,13 +21,13 @@ Firetiger needs authentication. Please:
 3. Sign in or create an account in the browser window
 ```
 
-When the user is done, retry calling `get_subscription_status` and proceed with setup.
+When the user is done, retry calling `get_ingest_credentials` and proceed with setup.
 
-If the tools ARE available, call `get_subscription_status` to verify the user is authenticated and proceed to Step 2.
+If the tools ARE available, the `get_ingest_credentials` call also handles Step 2 (provisioning), so proceed to Step 3.
 
 ## Step 2: Provision
 
-Call `get_ingest_credentials` to provision the organization's backend (credentials, data storage). This auto-provisions if not already set up.
+If you didn't already get credentials in Step 1, call `get_ingest_credentials` to provision the organization's backend (credentials, data storage). This auto-provisions if not already set up.
 
 ## Step 3: Detect the Stack
 

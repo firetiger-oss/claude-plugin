@@ -11,7 +11,7 @@ The official [Claude Code](https://claude.ai/code) plugin for [Firetiger](https:
 This repository publishes a single plugin:
 
 - `.claude-plugin/plugin.json`: plugin manifest
-- `commands/`: Firetiger skills exposed to Claude Code
+- `skills/`: Firetiger skills, vendored from firetiger-oss/skills (do not edit here)
 - `.mcp.json`: Firetiger MCP server configuration
 - `assets/firetiger.svg`: plugin logo
 
@@ -23,14 +23,17 @@ Connect to Firetiger's API for querying telemetry data, managing investigations,
 
 ### Skills
 
+Skills are vendored from [`firetiger-oss/skills`](https://github.com/firetiger-oss/skills) — do not edit them here.
+
 | Skill | Description |
 |-------|-------------|
-| `firetiger:setup` | Full onboarding - detects stack, adds instrumentation, connects integrations, creates agent |
-| `firetiger:instrument` | OpenTelemetry instrumentation for Node.js, Python, Go, and Rust applications |
-| `firetiger:create-agent` | Create a monitoring agent with a natural language goal |
-| `firetiger:monitor-deploy` | Set up deployment monitoring for a PR via GitHub integration |
-| `firetiger:query` | Query traces, logs, and metrics with SQL via Firetiger MCP |
-| `firetiger:investigate` | Start an investigation to diagnose issues |
+| `firetiger` | Firetiger observability toolkit — setup, instrumentation, queries, investigations, deploy monitoring, and agents |
+| `firetiger-create-agent` | Create or automate a monitoring agent in Firetiger |
+| `firetiger-instrument` | Instrument your application with OpenTelemetry for Firetiger |
+| `firetiger-investigate` | Start or read a Firetiger investigation to diagnose issues |
+| `firetiger-monitor-deploy` | Monitor a PR or deployment and review what Firetiger found |
+| `firetiger-query` | Query traces, logs, and metrics with SQL |
+| `firetiger-setup` | Set up Firetiger for this project — detect the stack, wire telemetry, connect integrations, create a monitoring agent |
 
 ## Resources
 
